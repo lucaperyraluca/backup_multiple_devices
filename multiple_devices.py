@@ -28,7 +28,7 @@ for router in routers:
     shell = ssh_client.invoke_shell()
 
     shell.send('terminal length 0\n')
-    shell.send('enable\n')
+    shell.send('enable\n') #only if your devices have all the same enable password
     shell.send('cisco\n')
     shell.send('show running-config\n')
     time.sleep(2)
