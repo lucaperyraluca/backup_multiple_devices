@@ -20,7 +20,7 @@ router3 = {'hostname': '192.168.122.30', 'port': '22', 'username':'u1', 'passwor
 routers = [router1, router2, router3]
 
 for router in routers:
-    file_name = f'{router["hostname"]}_hola_{year}_{month}_{day}.txt'
+    file_name = f'{router["hostname"]}_{year}_{month}_{day}.txt'
 
     print(f'Connecting to {router["hostname"]}')
 
