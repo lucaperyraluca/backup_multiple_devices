@@ -18,6 +18,9 @@ router2 = {'hostname': '192.168.122.20', 'port': '22', 'username':'u1', 'passwor
 router3 = {'hostname': '192.168.122.30', 'port': '22', 'username':'u1', 'password':'cisco'}
 
 routers = [router1, router2, router3]
+#Here you need to change the 'enable' password values ​​for each device. Note that it must have the same order as the 'routers'
+enables = ['cisco2\n', 'cisco4\n', 'cisco3\n']
+a=0
 
 for router in routers:
     file_name = f'{router["hostname"]}_{year}_{month}_{day}.txt'
@@ -28,8 +31,8 @@ for router in routers:
     shell = ssh_client.invoke_shell()
 
     shell.send('terminal length 0\n')
-    shell.send('enable\n') #only if your devices have all the same enable password
-    shell.send('cisco\n')
+    shell.send('enable\n')
+    shell.send(enables[a])
     shell.send('show running-config\n')
     time.sleep(2)
 
