@@ -50,3 +50,5 @@ for router in routers:
     if ssh_client.get_transport().is_active() == True:
         ssh_client.close()
         print(f'Closing connection to {router["hostname"]}')
+    
+    a = a+1
